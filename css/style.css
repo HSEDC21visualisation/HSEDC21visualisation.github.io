@@ -104,7 +104,8 @@ header {
   .intro h1 {
     font-family: "IBM Plex Mono";
     font-size: 58px;
-    color: white; }
+    color: white;
+    letter-spacing: 1; }
   .intro .introBlock {
     margin-left: 360px;
     width: 701px;
@@ -128,7 +129,7 @@ header {
       -ms-flex-pack: justify;
       justify-content: space-between; }
       .intro .introBlock .introBlockInner p {
-        line-height: 1.2;
+        line-height: 1.3;
         font-family: "IBM Plex Mono";
         font-size: 20px;
         color: white; }
@@ -208,7 +209,7 @@ header {
       width: 325px; }
       .year .yearImgBlock .yearImgBlockText p {
         margin-bottom: 68px;
-        line-height: 1.2;
+        line-height: 1.3;
         font-family: "IBM Plex Mono";
         font-size: 20px;
         color: white; }
@@ -227,7 +228,7 @@ header {
     justify-content: space-between; }
     .year .yearState p {
       width: 679px;
-      line-height: 1.2;
+      line-height: 1.3;
       font-family: "IBM Plex Mono";
       font-size: 20px;
       color: white; }
