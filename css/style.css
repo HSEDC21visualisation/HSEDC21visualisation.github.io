@@ -1,0 +1,290 @@
+/* http://meyerweb.com/eric/tools/css/reset/
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+@import url("https://fonts.googleapis.com/css?family=IBM+Plex+Mono&subset=cyrillic");
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline; }
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block; }
+
+body {
+  line-height: 1; }
+
+ol, ul {
+  list-style: none; }
+
+blockquote, q {
+  quotes: none; }
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: '';
+  content: none; }
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0; }
+
+body {
+  background-color: #111111;
+  min-width: 1440px; }
+
+.wrapper {
+  width: 1200px;
+  margin: 0 auto; }
+
+#alignLeft {
+  text-align: left; }
+
+#alignRight {
+  text-align: right; }
+
+header {
+  margin-top: 56px;
+  width: 100%;
+  height: 50px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+  -ms-flex-pack: end;
+  justify-content: flex-end;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center; }
+  header a {
+    color: white;
+    font-size: 20px;
+    font-family: "IBM Plex Mono";
+    margin-left: 50px;
+    text-decoration: none;
+    position: relative; }
+    header a::after {
+      content: '';
+      position: absolute;
+      bottom: -5px;
+      left: 0;
+      width: 100%;
+      height: 3px;
+      -webkit-transform: scaleX(0);
+      -ms-transform: scaleX(0);
+      transform: scaleX(0);
+      background-color: white;
+      -webkit-transition: all .3s ease;
+      -o-transition: all .3s ease;
+      transition: all .3s ease; }
+    header a:hover::after {
+      -webkit-transform: scaleX(1);
+      -ms-transform: scaleX(1);
+      transform: scaleX(1); }
+
+.intro {
+  margin-top: 275px; }
+  .intro h1 {
+    font-family: "IBM Plex Mono";
+    font-size: 58px;
+    color: white; }
+  .intro .introBlock {
+    margin-left: 360px;
+    width: 701px;
+    height: 200px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-flow: column;
+    flex-flow: column;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between; }
+    .intro .introBlock .introBlockInner {
+      margin-top: 72px;
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+      justify-content: space-between; }
+      .intro .introBlock .introBlockInner p {
+        line-height: 1.2;
+        font-family: "IBM Plex Mono";
+        font-size: 20px;
+        color: white; }
+      .intro .introBlock .introBlockInner a {
+        text-decoration: none;
+        color: #E9B0D6;
+        font-family: "IBM Plex Mono";
+        font-size: 20px;
+        position: relative; }
+        .intro .introBlock .introBlockInner a::after {
+          content: '';
+          position: absolute;
+          bottom: 47px;
+          left: 0;
+          width: 100%;
+          height: 3px;
+          -webkit-transform: scaleX(0);
+          -ms-transform: scaleX(0);
+          transform: scaleX(0);
+          background-color: #E9B0D6;
+          -webkit-transition: all .3s ease;
+          -o-transition: all .3s ease;
+          transition: all .3s ease; }
+        .intro .introBlock .introBlockInner a:hover::after {
+          -webkit-transform: scaleX(1);
+          -ms-transform: scaleX(1);
+          transform: scaleX(1); }
+    .intro .introBlock .introGitHub {
+      display: inline;
+      text-decoration: none;
+      color: white;
+      font-family: "IBM Plex Mono";
+      font-size: 20px;
+      position: relative;
+      width: 31%; }
+      .intro .introBlock .introGitHub::after {
+        content: '';
+        position: absolute;
+        bottom: -5px;
+        left: 0;
+        width: 100%;
+        height: 3px;
+        -webkit-transform: scaleX(0);
+        -ms-transform: scaleX(0);
+        transform: scaleX(0);
+        background-color: white;
+        -webkit-transition: all .3s ease;
+        -o-transition: all .3s ease;
+        transition: all .3s ease; }
+      .intro .introBlock .introGitHub:hover::after {
+        -webkit-transform: scaleX(1);
+        -ms-transform: scaleX(1);
+        transform: scaleX(1); }
+
+.year {
+  margin-top: 126px;
+  margin-bottom: 350px; }
+  .year:last-of-type {
+    margin-bottom: 229px; }
+  .year h1 {
+    font-family: "IBM Plex Mono";
+    font-size: 30px;
+    color: white; }
+  .year .yearImgBlock {
+    margin-top: 56px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between; }
+    .year .yearImgBlock img {
+      width: 696px;
+      height: 349px; }
+    .year .yearImgBlock .yearImgBlockText {
+      margin-top: 77px;
+      width: 325px; }
+      .year .yearImgBlock .yearImgBlockText p {
+        margin-bottom: 68px;
+        line-height: 1.2;
+        font-family: "IBM Plex Mono";
+        font-size: 20px;
+        color: white; }
+  .year .yearGraph {
+    margin: 70px auto 0 auto;
+    width: 103%;
+    height: 577px; }
+  .year .yearState {
+    margin-top: 200px;
+    position: relative;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between; }
+    .year .yearState p {
+      width: 679px;
+      line-height: 1.2;
+      font-family: "IBM Plex Mono";
+      font-size: 20px;
+      color: white; }
+  .year .yearSource {
+    margin-top: 60px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    width: 100%; }
+    .year .yearSource a {
+      bottom: 0;
+      text-decoration: none;
+      font-family: "IBM Plex Mono";
+      font-size: 20px;
+      color: white;
+      position: relative; }
+      .year .yearSource a::after {
+        content: '';
+        position: absolute;
+        bottom: -5px;
+        left: 0;
+        width: 100%;
+        height: 3px;
+        -webkit-transform: scaleX(0);
+        -ms-transform: scaleX(0);
+        transform: scaleX(0);
+        background-color: white;
+        -webkit-transition: all .3s ease;
+        -o-transition: all .3s ease;
+        transition: all .3s ease; }
+      .year .yearSource a:hover::after {
+        -webkit-transform: scaleX(1);
+        -ms-transform: scaleX(1);
+        transform: scaleX(1); }
+
+.footer h1 {
+  width: 520px;
+  font-family: "IBM Plex Mono";
+  font-size: 30px;
+  color: #E9B0D6;
+  letter-spacing: -0.4px; }
+
+.footer .credits {
+  margin-top: 43px;
+  margin-bottom: 280px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex; }
+  .footer .credits p {
+    font-family: "IBM Plex Mono";
+    font-size: 20px;
+    color: #E9B0D6;
+    padding-right: 178px;
+    line-height: 2; }
+
+.reversed {
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: reverse;
+  -ms-flex-flow: row-reverse;
+  flex-flow: row-reverse; }

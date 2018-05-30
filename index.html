@@ -1,0 +1,242 @@
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>HSE DC 2018 VISUALISATION</title>
+  <script type="text/javascript" src="js/Chart.bundle.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="js/smooth.js"></script>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <div class="wrapper">
+    <!-- //header -->
+    <header>
+      <a href="#2016">2016</a>
+      <a href="#2017">2017</a>
+    </header>
+    <!-- //Intro -->
+    <section class="intro">
+      <h1>Вооруженные нападения в США</h1>
+      <div class="introBlock">
+        <div class="introBlockInner">
+          <p>
+          Визуализация комплексного анализа<br>
+          более чем 260т. вооруженных нападений<br> совершенных в 2016-2017 годах
+          </p>
+          <a href="http://design.hse.ru/programming">&#8594; HSEDC2021</a>
+        </div>
+        <a href="" class="introGitHub">&#8594; проект на GitHub</a>
+      </div>
+    </section>
+    <!-- //2016 -->
+    <section class="year normal">
+      <a name="2016"></a>
+      <h1 id="alignRight">2016</h1>
+
+      <div class="yearImgBlock">
+        <img src="img/bale_1.png" alt="">
+        <div class="yearImgBlockText">
+          <p>Август 2016 — месяц, в котором произошло наибольшее количество инцидентов с оружием (5527). В нем случилась примерно десятая часть всех случаев, произошедших за год в Соединенных Штатах.</p>
+          <p>В тройку месяцев с наибольшим количеством случаев также входят июль и октябрь — по 5250 и 5251 инцидентов соответственно.</p>
+          <p>В целом, количество распределено по месяцам примерно в равных долях, однако, стоит отметить, что во второе полугодие 2016 инцидентов с оружием произошло на 3657 больше, чем в первое.</p>
+        </div>
+      </div>
+
+      <div class="yearGraph">
+        <canvas id="year2016annual"></canvas>
+        <script>
+          var MONTHS = ['Январь', 'Февраль', 'Март', 'Апрель', 'Май', 'Июнь', 'Июль', 'Август', 'Сентябрь', 'Октябрь', 'Ноябрь', 'Декабрь'];
+          var year2016 = [4590,3967,4892,4672,4902,4530,5250,5527,4937,5251,5092,5153];
+          var ctx = document.getElementById("year2016annual");
+          var myChart = new Chart(ctx, {
+              type: 'line',
+              data: {
+                  labels: MONTHS,
+                  datasets: [{
+                      label: 'нападения',
+                      data: year2016,
+                      color: 'rgba(255,255,255,1)',
+                      backgroundColor: '255,255,255,0.1',
+                      borderColor: 'rgba(255,255,255,1)',
+                      borderWidth: 3,
+                      pointBackgroundColor: 'rgba(255,255,255,1)',
+                      bodyFontSize: 20
+                  }]
+              },
+              options: {
+                  scales: {
+                    display: false,
+                    scaleLabel:[{
+                      display: false
+                    }],
+                      gridLines:[{
+                        color: 'rgba(255,255,255,1)'
+                      }],
+                      tick:[{
+                        fontColor: 'rgba(255,255,255,1)',
+                        fontSize: 20
+                      }]
+                  }
+              }
+          });
+        </script>
+      </div>
+
+      <div class="yearState reversed">
+        <p>
+          Штатом, в котором чаще всего происходят инциденты с оружием как в 2016, так и в 2017 является Иллинойс — ежегодно более пяти тысяч, в 2016 — 5055. Интересно, что Иллинойс вообще лидер по количеству инцидентов за последние пять лет, даже несмотря на то, что он лишь пятый по численности. Калифорния, например, превосходит Иллинойс по численности более чем в три раза, однако в ней в 2016 происходит на 1438 инцидентов меньше. В тройку штатов с наибольшим показателем также входят Флорида (4201) и уже упомянутая Калифорния (3617). Удивительно и то, что количество убийств штата Иллинойс, даже при большом количестве инцидентов в 2016, не входит и в тройку самых высоких показателей. Больше всего убийств с использованием оружия произошло в трех самых густонаселенных штатах: Калифорнии, Техасе и Флориде.
+        </p>
+      </div>
+      <div class="yearGraph" style="margin-top: 100px;">
+        <canvas id="year2016states"></canvas>
+        <script>
+          var MONTHS = ['Гаваи', 'Аризона', 'Юта', 'Минесота', 'Айдахо', 'Калифорния', 'Вашингтон', 'Нью Йорк', 'Мичиган', 'Орегон'];
+          var year2016 = [18.07,12.66,12.41,11.92,11.08,10.93,9.66,7.87,7.52,7.51];
+          var ctx = document.getElementById("year2016states");
+          var myChart = new Chart(ctx, {
+              type: 'bar',
+              data: {
+                  labels: MONTHS,
+                  datasets: [{
+                      label: 'Количество инцидентов на 1000 человек',
+                      data: year2016,
+                      backgroundColor: 'rgba(255,255,255,0.5)',
+                      borderColor: 'rgba(255,255,255,1)',
+                      borderWidth: 3,
+                      hoverBackgroundColor: 'rgba(255,255,255,1)',
+                      bodyFontSize: 20
+                  }]
+              },
+              options: {
+        scales: {
+            yAxes: [{
+                ticks: {
+                    beginAtZero:true
+                }
+            }]
+        }
+    }
+          });
+        </script>
+      </div>
+      <div class="yearSource">
+        <a href="https://www.kaggle.com/jameslko/gun-violence-data/kernels">&#8594; источник</a>
+      </div>
+    </section>
+
+
+    <section class="year">
+      <a name="2017"></a>
+      <h1 id="alignLeft">2017</h1>
+
+      <div class="yearImgBlock reversed">
+        <img src="img/bale_2.png" alt="">
+        <div class="yearImgBlockText">
+          <p>В 2017 число инцидентов возросло на 2638 единиц, то есть примерно на 4,5%. Следовательно и месяц с самым высоким показателем частоты происходящего имеет более значительную цифру: 5666 инцидентов. </p>
+          <p>Такое количество случаев с оружием произошло в мае 2017. Это составляет примерно 9,25% от общего годового показателя. В тройку самых результативных месяцев также вошли апрель (5577) и июль (5547).</p>
+          <p>Примечательно, что показатели самого результативного месяца 2016 года не вошли бы даже в тройку месяцев, с наибольшим количеством случаев в 2017.</p>
+        </div>
+      </div>
+
+      <div class="yearGraph">
+        <canvas id="year2017annual"></canvas>
+        <script>
+          var MONTHS = ['Январь', 'Февраль', 'Март', 'Апрель', 'Май', 'Июнь', 'Июль', 'Август', 'Сентябрь', 'Октябрь', 'Ноябрь', 'Декабрь'];
+          var year2016 = [5258,4585,4994,5577,5666,5158,5547,5202,4790,5200,4802,4622];
+          var ctx = document.getElementById("year2017annual");
+          var myChart = new Chart(ctx, {
+              type: 'line',
+              data: {
+                  labels: MONTHS,
+                  datasets: [{
+                      label: 'нападения',
+                      data: year2016,
+                      color: 'rgba(255,255,255,1)',
+                      backgroundColor: '255,255,255,0.1',
+                      borderColor: 'rgba(255,255,255,1)',
+                      borderWidth: 3,
+                      pointBackgroundColor: 'rgba(255,255,255,1)',
+                      bodyFontSize: 20
+                  }]
+              },
+              options: {
+                  scales: {
+                    display: false,
+                    scaleLabel:[{
+                      display: false
+                    }],
+                      gridLines:[{
+                        color: 'rgba(255,255,255,1)'
+                      }],
+                      tick:[{
+                        fontColor: 'rgba(255,255,255,1)',
+                        fontSize: 20
+                      }]
+                  }
+              }
+          });
+        </script>
+      </div>
+
+      <div class="yearState">
+        <p>
+          Лидерами по количеству инцидентов по-прежнему являются те же штаты: Иллинойс — 5089, Калифорния — 4588 и Флорида — 4156.  Примечательно, что Калифорния — единственный штат, в котором показатели резко выросли по сравнению с 2016 годом. Рост зафиксирован на 971 смерть — это около 26% прироста, наибольший прирост зафиксирован в Висконсине — около 59% (от 859 случаев в 2016 до 1369 в 2017). Наибольшее количество огнестрельных убийств, происходят в Калифорнии — 1423, Техасе — 1169 и Иллинойсе — 959. По итогам 2017, количество убийств в штате Техас снизилось, а в Иллинойсе возросло, что привело показатель в последнем к топ-3 показателей по всей Америке.
+        </p>
+      </div>
+      <div class="yearGraph" style="margin-top: 100px;">
+        <canvas id="year2017states"></canvas>
+        <script>
+          var MONTHS = ['Гаваи', 'Юта', 'Аризона', 'Айдахо', 'Нью Йорк', 'Техас', 'Вермонт', 'Калифорния', 'Вашингтон', 'Оригон'];
+          var year2016 = [20.99,13.95,11.95,10.53,9.77,9.21,8.78,8.62,8.41,8.11];
+          var ctx = document.getElementById("year2017states");
+          var myChart = new Chart(ctx, {
+              type: 'bar',
+              data: {
+                  labels: MONTHS,
+                  datasets: [{
+                      label: 'Количество инцидентов на 1000 человек',
+                      data: year2016,
+                      backgroundColor: 'rgba(255,255,255,0.5)',
+                      borderColor: 'rgba(255,255,255,1)',
+                      borderWidth: 3,
+                      hoverBackgroundColor: 'rgba(255,255,255,1)',
+                      bodyFontSize: 20
+                  }]
+              },
+              options: {
+        scales: {
+            yAxes: [{
+                ticks: {
+                    beginAtZero:true
+                }
+            }]
+        }
+    }
+          });
+        </script>
+      </div>
+      <div class="yearSource reversed">
+        <a href="https://www.kaggle.com/jameslko/gun-violence-data/kernels">&#8594; источник</a>
+      </div>
+    </section>
+
+    <section class="footer">
+      <h1>Спасибо за внимание!</h1>
+      <div class="credits">
+        <p>DONE BY</p>
+        <p>Антон Алмосов <br>
+        Катя Дорош <br>
+        Василий Молоствов <br>
+        Влад Ви <br></p>
+      </div>
+    </section>
+  </div>
+
+
+  <script>
+	  var scroll = new SmoothScroll('a[href*="#"]');
+  </script>
+</body>
+</html>
